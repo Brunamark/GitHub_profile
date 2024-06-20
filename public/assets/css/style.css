@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+ 
+}
+body{
+    background-color: rgba(1,4,9,255);
+    font-family: "Jersey 20", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+
+main {
+    color: #b0b7bc ;
+    font-size: 1.8rem;
+   
+}
+main h2{
+    margin: 0 20px;
+    font-size: 3rem;
+}
+main h3{
+    font-size: 2.5rem;
+}
+main h4{
+    font-size: 2.0rem;
+}
+.navbar-brand{
+    font-size: 3rem;
+}
+.navbar-nav{
+    font-size: 2.5rem;
+}
+
+.info{
+    min-width: 50%;
+    max-width: 60%;
+    margin-left: 50px;
+    p{
+        font-size: 1.2rem;
+    }
+}
+
+#profile-list{
+    background-color: #161b22;
+    border-radius: 30px;
+    padding: 20px;
+    
+}
+.profile-paragraphs{
+    padding: 10px;
+    margin-left: 80px;
+}
+
+#profile img{
+    min-width: 30vh;
+    max-width: 30vh;
+    margin-right: 50px;
+    border-radius: 100%;
+}
+
+.info{
+    P{
+        font-size: 1.8rem;
+    }
+    h3{
+        font-size: 3rem;
+    }
+}
+
+
+
+.carousel-item{
+    img{
+        max-height: 60vh;
+        min-height: 60vh;
+        min-width: 90vh;
+        max-width: 90vh;
+       
+    }
+}
+footer{
+    color:#b0b7bc;
+    text-align: center;
+    font-size: 1.8rem;
+}
+/*
+.coworkers .container-coworkers{
+    display: flex;
+    padding: 0px;
+    
+    
+}
+*/
+
+.coworkers img{
+   min-width: 8vh;
+   max-width: 8vh;
+   border-radius: 100%;
+}
+
+.coworkers p{
+    text-align: center;
+    
+    
+}
+@media (max-width: 990px) {
+    #container-profile {
+        flex-direction: column !important;
+        align-items: center;
+    }
+}
