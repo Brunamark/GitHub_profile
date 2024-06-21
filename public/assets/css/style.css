@@ -72,8 +72,6 @@ main h4{
     }
 }
 
-
-
 .carousel-item{
     img{
         max-height: 60vh;
@@ -88,14 +86,6 @@ footer{
     text-align: center;
     font-size: 1.8rem;
 }
-/*
-.coworkers .container-coworkers{
-    display: flex;
-    padding: 0px;
-    
-    
-}
-*/
 
 .coworkers img{
    min-width: 8vh;
