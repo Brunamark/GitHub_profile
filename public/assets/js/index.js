@@ -36,15 +36,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     
     console.log(user);
 
-    const followers = await getFollowers();
-    console.log(followers[6].login);
-    const coworkerFirst = document.querySelector('.first-coleague');
-    const linkFistImg = document.createElement('a');
-    linkFistImg.setAttribute("href", followers[6].html_url);
-    coworkerFirst.appendChild(linkFistImg);
-    const imgFirstCow = document.querySelector('.first-coleague>img');
-
-
     const containerRepo = document.querySelector('.repo>#container');
     const repositories = await getRepositories();
     repositories.map(async(currentValue, index)=>{
@@ -98,7 +89,48 @@ document.addEventListener('DOMContentLoaded', async function () {
         divRepo.appendChild(divContent);
 
         containerRepo.appendChild(divRepo);
-
         
     });
+
+    const followers = await getFollowers();
+    console.log(followers);
+    const coworkerFirst = document.querySelector('.first-coleague');
+    const linkFistImg = document.querySelector('.first-coleague>img');
+    linkFistImg.setAttribute("src", followers[6].avatar_url);
+    coworkerFirst.appendChild(linkFistImg);
+    var nameCoworker = document.createElement('p');
+    nameCoworker.innerHTML=followers[6].login;
+    coworkerFirst.append(nameCoworker);
+
+    const coworkerSecond = document.querySelector('.second-coleague');
+    const linkSecondImg = document.querySelector('.second-coleague>img');
+    linkSecondImg.setAttribute("src", followers[8].avatar_url);
+    coworkerSecond.appendChild(linkSecondImg);
+    nameCoworker = document.createElement('p');
+    nameCoworker.innerHTML=followers[8].login;
+    coworkerSecond.append(nameCoworker);
+
+    const coworkerThird = document.querySelector('.third-coleague');
+    const linkThirdImg = document.querySelector('.third-coleague>img');
+    linkThirdImg.setAttribute("src", followers[3].avatar_url);
+    coworkerThird.appendChild(linkThirdImg);
+    nameCoworker = document.createElement('p');
+    nameCoworker.innerHTML=followers[3].login;
+    coworkerThird.append(nameCoworker);
+
+    const coworkerFourth = document.querySelector('.fourth-coleague');
+    const linkFourthImg = document.querySelector('.fourth-coleague>img');
+    linkFourthImg.setAttribute("src", followers[5].avatar_url);
+    coworkerFourth.appendChild(linkFourthImg);
+    nameCoworker = document.createElement('p');
+    nameCoworker.innerHTML=followers[5].login;
+    coworkerFourth.append(nameCoworker);
+
+    const coworkerFifith = document.querySelector('.fifith-coleague');
+    const linkFifithImg = document.querySelector('.fifith-coleague>img');
+    linkFifithImg.setAttribute("src", followers[7].avatar_url);
+    coworkerFifith.appendChild(linkFifithImg);
+    nameCoworker = document.createElement('p');
+    nameCoworker.innerHTML=followers[7].login;
+    coworkerFifith.append(nameCoworker);
 });
