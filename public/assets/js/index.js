@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', async function () {
     async function getFollowers(){
         return gitHub.getFollowers();
     }
+    async function getRepositories(){
+        return gitHub.getRepositories();
+    }
     const user = await getUser();
     const profilePicture = document.querySelector("#profile-picture");
     const tagImg = document.querySelector('#profile-picture>img');
@@ -19,31 +22,12 @@ document.addEventListener('DOMContentLoaded', async function () {
     const divHeader = document.querySelector('header>.container-fluid');
     const headerName = document.querySelector('#name-navbar');
     headerName.innerHTML = user.name;
-    /*
-    const infoElement = document.querySelector('#frame-info');
-    const divInfoElement = document.createElement('div');
-    divInfoElement.setAttribute("class", "first-img");
-    const link1InfoElement = document.createElement('img');
-    var url = await photo.getPhoto(1);
-    url = url.url;
-    link1InfoElement.setAttribute("src", url);
-    divInfoElement.appendChild(link1InfoElement);
+
     
-    const divInfo2Element = document.createElement('div');
-    divInfo2Element.setAttribute("class", "second-img");
-    const link2InfoElement = document.createElement('img');
-    url = await photo.getPhoto(2);
-    url = url.url;
-    console.log(url);
-    link2InfoElement.setAttribute("src", url);
-    divInfo2Element.appendChild(link2InfoElement);
-
-    infoElement.appendChild(divInfoElement);
-    infoElement.appendChild(divInfo2Element);*/
-
     const nameElement = document.querySelector('#name');
     const h3Element = document.createElement("h3");
     h3Element.innerHTML = user.name;
+
     nameElement.appendChild(h3Element);
     const bioElement = document.querySelector('#bio');
     const pElement = document.createElement('p');
@@ -59,5 +43,62 @@ document.addEventListener('DOMContentLoaded', async function () {
     linkFistImg.setAttribute("href", followers[6].html_url);
     coworkerFirst.appendChild(linkFistImg);
     const imgFirstCow = document.querySelector('.first-coleague>img');
-    
+
+
+    const containerRepo = document.querySelector('.repo>#container');
+    const repositories = await getRepositories();
+    repositories.map(async(currentValue, index)=>{
+        const divRepo = document.createElement('div');
+        console.log("repos: ", currentValue.description);
+        divRepo.setAttribute("id", index);
+        divRepo.setAttribute("class", "card-repo col-xs-1 col-md-3 col-sm-5 col-lg-5  border border-light ms-3 me-2 my-3 p-2");
+        const linkRepo = document.createElement('a');
+        linkRepo.setAttribute("href", "../../view/repo.html");
+        const divContent = document.createElement('div');
+        divContent.setAttribute("class", "content-repo d-flex flex-column justify-content-end h-70");
+        const nameRepoElement = document.createElement('h3');
+        nameRepoElement.innerHTML = currentValue.name;
+        nameRepoElement.setAttribute("class","d-flex justify-content-center border border-ligh");
+        const descriptionRepoElement = document.createElement('p');
+        descriptionRepoElement.setAttribute("class", "d-flex justify-content-center");
+        if(currentValue.name.toLowerCase() === currentValue.owner.login.toLowerCase()){
+            descriptionRepoElement.innerHTML = "README.md";
+        }else{
+            descriptionRepoElement.innerHTML = currentValue.description;
+        }
+        
+        linkRepo.appendChild(nameRepoElement);
+        divRepo.appendChild(linkRepo);
+        divContent.appendChild(descriptionRepoElement);
+
+        const imgDiv = document.createElement("div");
+        imgDiv.setAttribute("class", "d-flex flex-row align-items-center justify-content-between");
+        imgDiv.setAttribute("id", "star-content");
+        const divContentRepo = document.createElement('div');
+        divContentRepo.setAttribute("id", "starred");
+        divContentRepo.setAttribute("class", "d-flex flex-row align-items-center");
+        const imgStar = document.createElement('img');
+        
+        imgStar.setAttribute("src", "../../assets/img/star.svg");
+        divContentRepo.appendChild(imgStar);
+
+        const qntStar = document.createElement('p');
+        qntStar.innerHTML = currentValue.stargazers_count;
+        
+        const pictureOwner = document.createElement('div');
+        const imgPictureOwner = document.createElement('img');
+        pictureOwner.setAttribute("class","picture-owner");
+        imgPictureOwner.setAttribute("src", currentValue.owner.avatar_url);
+        pictureOwner.appendChild(imgPictureOwner);
+
+        divContentRepo.appendChild(qntStar);
+        imgDiv.appendChild(divContentRepo);
+        imgDiv.appendChild(pictureOwner);
+        divContent.appendChild(imgDiv);
+        divRepo.appendChild(divContent);
+
+        containerRepo.appendChild(divRepo);
+
+        
+    });
 });

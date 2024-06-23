@@ -70,6 +70,12 @@ main h4 {
 #info{
     width: 100%;
 }
+#repo{
+    overflow-y: auto;
+    h3{
+        font-size: 2.0rem;
+    }
+}
 #profile-picture {
     width: 100%;
 
@@ -82,11 +88,30 @@ main h4 {
     }
 }
 
+.picture-owner{
+    img{
+        border-radius: 100%;
+    }
+}
 
 #info-name {
     width: 100%;
 }
-
+#star-content{
+    img{
+        width: 3vh;
+    }
+    p{
+        margin: 0;
+    }
+}
+.card-repo{
+    a{
+        text-decoration: none;
+        color: #b0b7bc;
+        cursor:pointer;
+    }
+}
 .carousel-item {
     img {
         max-height: 60vh;
@@ -119,6 +144,12 @@ footer {
     #container-profile {
         flex-direction: column !important;
         align-items: center;
+    }
+    #repo{
+        h3{
+            font-size: 1.0rem;
+          
+        }
     }
 
 }
