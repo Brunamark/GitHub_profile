@@ -63,7 +63,13 @@ main h4 {
     padding: 10px;
     margin-left: 80px;
 }
-
+#frame-info{
+    background-color: #161b22;
+    border-radius: 10px;
+}
+#info{
+    width: 100%;
+}
 #profile-picture {
     width: 100%;
 
@@ -122,6 +128,8 @@ footer {
         img {
             min-width: 20vh;
             max-width: 20vh;
+            min-height: 20vh;
+            max-height: 20vh;
         }
     }
 }

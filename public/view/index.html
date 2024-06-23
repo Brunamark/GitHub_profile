@@ -4,24 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mikael Muniz</title>
+  <title>Bruna Markowisk</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="repository" href="./repo.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 
 </head>
 
 <body>
 
-  <header class="bg-black bg-gradient">
+  <header class="bg-black bg-gradient fw-medium" id="navbar">
     <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
       <div class="container-fluid">
         <a class="navbar-brand ms-2" href="#profile" id="name-navbar"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -34,7 +37,7 @@
       </div>
     </nav>
   </header>
-  
+
   <main>
     <section class="profile my-4" id="profile">
       <h2>Profile</h2>
@@ -44,41 +47,115 @@
           <div class=" d-flex justify-content-center" id="profile-picture">
             <img src="" alt="Boneco de desenho com oculos escuros programando">
           </div>
-          <div class="info-name" >
+          <div class="info-name">
             <div class="d-flex justify-content-center" id="name">
             </div>
             <div class="d-flex justify-content-center" id="bio">
             </div>
           </div>
-        </div>
-        
-
-        <div class="info"> 
-          <div class="row" id="profile-list">
-            <div
-              class=""
-              id="frame-info">
-              
-            </div>
-          </div>
-          <div class="d-flex flex-row" id="links-contacts">
+          <div class="mb-3" id="links-contacts">
             <div class="img-linkedln">
               <a href="https://www.linkedin.com/in/bruna-markowisk-848384184/">
                 <img src="../assets/img/linkedln.png" alt="linkedin redirecionador">
               </a>
-              
+
             </div>
           </div>
         </div>
-        
-      </div>
+          
+        </div>
+
+
+        <div class="d-flex justify-content-center " id="info">
+          <div class="row" id="profile-list">
+            <div class="col-md-3 col-sm-3 col-lg-3 col-xs-1 fs-6 w-100 p-4" id="frame-info">
+              <div class="d-flex flex-row">
+                <p style="color:#ff7b58; font-weight: bold;">public class</p>
+                <p class="ms-2">SoftwareEngineer {</p>
+              </div>
+              <div class="d-flex flex-row">
+                <p class="ms-3" style="color:#ff7b58; font-weight: bold;">private</p>
+                <p class="ms-2">String name;</p>
+              </div>
+              <div class="d-flex flex-row">
+                <p class="ms-3" style="color:#ff7b58; font-weight: bold;">private</p>
+                <p class="ms-2">String role;</p>
+              </div>
+              <div class="d-flex flex-row">
+                <p class="ms-3" style="color:#ff7b58; font-weight: bold;">private</p>
+                <p class="ms-2">String[] languageSpoken;</p>
+              </div>
+
+              <div class="d-flex flex-row mt-3">
+                <p class="ms-4" style="color:#ff7b58; font-weight: bold;">public</p>
+                <p class="ms-2">SoftwareEngineer() {</p>
+              </div>
+              <div class="d-flex flex-row">
+                <p class="ms-5"> this.name =</p>
+                <p class="ms-2" style="color:#a5d6ff;">"Bruna Markowisk"</p>
+                <p class="ms-1">;</p>
+              </div>
+              <div class="d-flex flex-row">
+                <p class="ms-5"> this.role =</p>
+                <p class="ms-2" style="color:#a5d6ff;">"Software Engineer Student"</p>
+                <p class="ms-1">;</p>
+              </div>
+              <div class="d-flex flex-row">
+                <p class="ms-5"> this.languageSpoken =</p>
+                <p class="ms-2" style="color:#ff7b58; font-weight: bold;">new</p>
+                <p class="ms-1"> String[]{</p>
+                <p class="ms-1" style="color:#a5d6ff;">"pt_BR", "en_US"</p>
+                <p class="ms-1">};</p>
+              </div>
+              <div class="">
+                <p class="ms-4">}</p>
+              </div>
+              <div class="d-flex flex-row mt-3">
+                <p class="ms-4" style="color:#ff7b58; font-weight: bold;">public</p>
+                <p class="ms-2">void</p>
+                <p class="ms-2" style="color:#aea8ff; ">sayHi</p>
+                <p>(){</p>
+              </div>
+              <div class="d-flex flex-row">
+                <p class="ms-5"> System.out.</p>
+                <p class="ms-2" style="color:#aea8ff;">println</p>
+                <p class="ms-1" style="color:#a5d6ff; ">("Thanks for dropping by. Contact me to code together and build
+                  something new :) );"</p>
+              </div>
+              <div>
+                <p class="ms-4">}</p>
+              </div>
+              <div class="d-flex flex-row mt-3">
+                <p class="ms-4" style="color:#ff7b58; font-weight: bold;">public static</p>
+                <p class="ms-2">void</p>
+                <p class="ms-2" style="color:#aea8ff; ">main</p>
+                <p>()(String[] args) {</p>
+              </div>
+              <div class="d-flex flex-row">
+                <p class="ms-5">SoftwareEngineer me =</p>
+                <p class="ms-2" style="color:#ff7b58; font-weight: bold;">new</p>
+                <p class="ms-2">SoftwareEngineer();</p>
+                <p></p>
+              </div>
+              <div class="d-flex flex-row">
+                <p class="ms-5">me.</p>
+                <p class="ms-2" style="color:#aea8ff; ">sayHi</p>
+                <p class="ms-2">();</p>
+              </div>
+              <p class="ms-4">}</p>
+              <p>}</p>
+
+            </div>
+            
+
+        </div>
     </section>
     <section class="repo" id="repo">
       <h2>Repositories</h2>
       <hr>
 
       <div class="container">
-        
+
 
       </div>
 
@@ -147,8 +224,7 @@
         <div class="row justify-content-center">
           <div class="col-xs-5  col-md-2 col-sm-4 m-3" id="footer-coleague">
             <div class="first-coleague">
-              <img src="../assets/img/mika.jpeg"
-                alt="Homem com olheras e blusa preta.">
+              <img src="../assets/img/mika.jpeg" alt="Homem com olheras e blusa preta.">
               <p>Mika</p>
             </div>
           </div>
@@ -159,8 +235,7 @@
           </div>
           <div class="col-xs-5 col-md-2 col-sm-4 m-3" id="footer-coleague">
             <div class="second-coleague">
-              <img src=""
-                alt="Mulher com cabelos castanhos e grande com mechas loiras na parte da frente do cabelo">
+              <img src="" alt="Mulher com cabelos castanhos e grande com mechas loiras na parte da frente do cabelo">
               <p>Carolis</p>
             </div>
 
@@ -173,8 +248,7 @@
           </div>
           <div class=" col-xs-5  col-md-2 col-sm-4 m-3" id="footer-coleague">
             <div class="fourth-coleague">
-              <img src=""
-                alt="Homem de cabelos curtos, castanhos, com blusa preta e sorridente.">
+              <img src="" alt="Homem de cabelos curtos, castanhos, com blusa preta e sorridente.">
               <p>Victor N</p>
             </div>
           </div>
@@ -191,7 +265,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-    <script type="module" src="../assets/js/index.js"></script>
+  <script type="module" src="../assets/js/index.js"></script>
 </body>
 
 </html>
