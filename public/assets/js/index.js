@@ -30,10 +30,25 @@ document.addEventListener('DOMContentLoaded', async function () {
     h3Element.innerHTML = user.name;
 
     nameElement.appendChild(h3Element);
+   
     const bioElement = document.querySelector('#bio');
+    const divBio = document.createElement('div');
+    divBio.setAttribute("class", "d-flex flex-column");
     const pElement = document.createElement('p');
     pElement.innerHTML = user.bio;
-    bioElement.appendChild(pElement);
+    divBio.appendChild(pElement);
+    bioElement.appendChild(divBio);
+
+    const location = document.createElement('p');
+    location.innerHTML = user.location;
+    divBio.appendChild(location);
+    bioElement.appendChild(divBio);
+
+    const followersOwner = document.createElement('p');
+    followersOwner.innerHTML = `Seguidores: ${user.followers}`;
+    divBio.appendChild(followersOwner);
+    bioElement.appendChild(divBio);
+
 
     const containerRepo = document.querySelector('.repo>#container');
     const repositories = await getRepositories();
@@ -75,9 +90,14 @@ document.addEventListener('DOMContentLoaded', async function () {
         qntStar.innerHTML = currentValue.stargazers_count;
 
         const pictureOwner = document.createElement('div');
+        pictureOwner.setAttribute("class", "d-flex flex-row");
         const imgPictureOwner = document.createElement('img');
-        pictureOwner.setAttribute("class", "picture-owner");
-        imgPictureOwner.setAttribute("src", currentValue.owner.avatar_url);
+        pictureOwner.setAttribute("class", "picture-fork d-flex flex-row");
+        imgPictureOwner.setAttribute("src", "../../assets/img/fork.svg");
+        const numFork = document.createElement('p');
+        numFork.innerHTML = currentValue.fork;
+
+        pictureOwner.appendChild(numFork);
         pictureOwner.appendChild(imgPictureOwner);
 
         divContentRepo.appendChild(qntStar);
