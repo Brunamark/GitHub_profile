@@ -188,4 +188,15 @@ footer {
             width: 100%;
         }
     }
+    #name-navbar{
+      font-size: 2.0rem;
+    }
+    #link-div{
+        a{
+            p{
+                font-size: 1rem;
+            }
+        }
+        
+    }
 }

@@ -1,10 +1,14 @@
 import { GitHubService } from "../../services/github-service.js";
 import { PhotosService } from "../../services/photos-service.js";
 import { StorageService } from "../../services/localStorage-service.js";
+import { LinksService } from "../../services/links-service.js"
+
 
 document.addEventListener('DOMContentLoaded', async function () {
     const gitHub = new GitHubService();
     const photo = new PhotosService();
+    const links = new LinksService();
+
 
     async function getUser() {
         return gitHub.getUser();
@@ -15,6 +19,13 @@ document.addEventListener('DOMContentLoaded', async function () {
     async function getRepositories() {
         return gitHub.getRepositories();
     }
+    async function getLink(id) {
+        return links.getLink(id);
+    }
+    async function getPhoto(id) {
+        return photo.getPhoto(id);
+    }
+
     const user = await getUser();
     const profilePicture = document.querySelector("#profile-picture");
     const tagImg = document.querySelector('#profile-picture>img');
@@ -30,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     h3Element.innerHTML = user.name;
 
     nameElement.appendChild(h3Element);
-   
+
     const bioElement = document.querySelector('#bio');
     const divBio = document.createElement('div');
     divBio.setAttribute("class", "d-flex flex-column");
@@ -108,13 +119,62 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         containerRepo.appendChild(divRepo);
 
-        nameRepoElement.addEventListener('click',()=>{
-            StorageService.saveData("repo",currentValue );
-            linkRepo.setAttribute("href","../../view/repo.html");
+        nameRepoElement.addEventListener('click', () => {
+            StorageService.saveData("repo", currentValue);
+            linkRepo.setAttribute("href", "../../view/repo.html");
             divRepo.appendChild(nameRepoElement);
 
         });
 
+    });
+
+
+    const carouselInner = document.querySelector('#carouselExampleCaptions>.carousel-inner');
+    const carouselPrev = document.querySelector('#carouselExampleCaptions .carousel-control-prev');
+    const carouselNext = document.querySelector('#carouselExampleCaptions .carousel-control-next');
+
+
+    const vectorCarousel = new Array(5).fill(null);
+    var i = 4;
+    var cont = 1;
+    async function createCarouselItem(index) {
+        const divCarousel = document.createElement('div');
+        divCarousel.setAttribute("class", `carousel-item ${index === 0 ? 'active' : ''} d-flex justify-content-center align-items-center`);
+
+        const aTagCarousel = document.createElement('a');
+        var linkCarousel = await getLink(i + index);
+        aTagCarousel.setAttribute('href', linkCarousel.url);
+
+        const imgCarousel = document.createElement('img');
+        var img = await getPhoto(cont + index);
+        imgCarousel.setAttribute("src", img.url);
+        imgCarousel.setAttribute("class", "d-block w-100");
+
+        aTagCarousel.appendChild(imgCarousel);
+        divCarousel.appendChild(aTagCarousel);
+        return divCarousel;
+    }
+    async function initializeCarousel() {
+        for (let index = 0; index < vectorCarousel.length; index++) {
+            const carouselItem = await createCarouselItem(index);
+            carouselInner.appendChild(carouselItem);
+        }
+    }
+
+    initializeCarousel();
+
+    carouselPrev.addEventListener('click', async function () {
+        const currentActive = document.querySelector('#carouselExampleCaptions .carousel-item.active');
+        const prevSibling = currentActive.previousElementSibling || carouselInner.lastElementChild;
+        currentActive.classList.remove('active');
+        prevSibling.classList.add('active');
+    });
+
+    carouselNext.addEventListener('click', async function () {
+        const currentActive = document.querySelector('#carouselExampleCaptions .carousel-item.active');
+        const nextSibling = currentActive.nextElementSibling || carouselInner.firstElementChild;
+        currentActive.classList.remove('active');
+        nextSibling.classList.add('active');
     });
 
     const followers = await getFollowers();
@@ -158,5 +218,5 @@ document.addEventListener('DOMContentLoaded', async function () {
     nameCoworker.innerHTML = followers[7].login;
     coworkerFifith.append(nameCoworker);
 
-    
+
 });

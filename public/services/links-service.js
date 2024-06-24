@@ -1,8 +1,8 @@
-export class PhotosService{
+export class LinksService{
     constructor() {
-        this.urlBase = 'http://localhost:3000/photos';
+        this.urlBase = 'http://localhost:3000/links';
       }
-    async getPhotos(){
+    async getLinks(){
         try{
             const res = await fetch(this.urlBase);
             return res.json();
@@ -10,7 +10,7 @@ export class PhotosService{
             console.log("Error in fetch db from JSONServer");
         } 
     }
-    async getPhoto(id){
+    async getLink(id){
         try{
             const res = await fetch(`${this.urlBase}/${id}`);
             return res.json();
@@ -18,7 +18,7 @@ export class PhotosService{
             console.log("Error in fetch db from JSONServer");
         } 
     }
-    async createPhoto(url){
+    async createLink(url){
         try{
             const res = await fetch(this.urlBase,{
                 method: 'POST',
@@ -32,7 +32,7 @@ export class PhotosService{
             console.log("Error in fetch db from JSONServer");
         }
     }
-    async updatePhoto(id, url){
+    async updateLink(id, url){
         try{
             const res = await fetch(`${this.urlBase}/${id}`, {
                 method: 'PUT',
@@ -46,7 +46,7 @@ export class PhotosService{
             console.log("Error in fetch db from JSONServer");
         }
     }
-    async deletePhoto(id){
+    async deleteLink(id){
         try{
             const res = await fetch(`${this.urlBase}/${id}`, {
                 method: 'DELETE'

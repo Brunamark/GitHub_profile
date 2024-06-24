@@ -1,10 +1,12 @@
 import { GitHubService } from "../../services/github-service.js";
 import { PhotosService } from "../../services/photos-service.js";
 import { StorageService } from "../../services/localStorage-service.js";
+import { LinksService } from "../../services/links-service.js"
 
 document.addEventListener('DOMContentLoaded', async function () {
     const gitHub = new GitHubService();
     const photo = new PhotosService();
+    const links = new LinksService();
 
     async function getUser() {
         return gitHub.getUser();
@@ -14,6 +16,9 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
     async function getRepositories() {
         return gitHub.getRepositories();
+    }
+    async function getLink(id){
+        return links.getLink(id);
     }
     const user = await getUser();
     const repos = StorageService.loadData("repo");
@@ -72,7 +77,10 @@ document.addEventListener('DOMContentLoaded', async function () {
     section.appendChild(pDescription);
 
     const navFirst = document.querySelector('.nav-link1');
-    navFirst.setAttribute("href", '#description-title');
+    
+    var link1 = await getLink(1);
+    navFirst.setAttribute("href", link1.url);
+    navFirst.setAttribute("class", "ms-3");
 
     titleDescription = document.createElement('h3');
     titleDescription.innerHTML = "Data de Criação";
@@ -81,7 +89,9 @@ document.addEventListener('DOMContentLoaded', async function () {
     titleDescription.setAttribute("id", "date-title");
 
     const navSecond = document.querySelector('.nav-link2');
-    navSecond.setAttribute("href", '#date-title');
+
+    var link2 = await getLink(2);
+    navSecond.setAttribute("href", link2.url);
     navSecond.setAttribute("class", "ms-3");
 
 
@@ -101,7 +111,9 @@ document.addEventListener('DOMContentLoaded', async function () {
     titleDescription.setAttribute("id", "language-title");
 
     const navThird = document.querySelector('.nav-link3');
-    navThird.setAttribute("href", '#language-title');
+
+    var link3 = await getLink(3);
+    navThird.setAttribute("href", link3.url);
     navThird.setAttribute("class", "ms-3");
 
     const pLang = document.createElement('p');
@@ -116,34 +128,42 @@ document.addEventListener('DOMContentLoaded', async function () {
     titleDescription.innerHTML = "Link de Acesso";
     titleDescription.setAttribute("class", " ms-4 mt-5");
 
+    const divLink = document.createElement('div');
+    divLink.setAttribute("class","d-flex flex-column");
+    divLink.setAttribute("id", "link-div");
     const aHref = document.createElement('a');
     aHref.setAttribute("href", repos.html_url);
     aHref.setAttribute("class", "link");
     const pLink = document.createElement('p');
     pLink.setAttribute("class", " ms-5");
 
-
+    divLink.appendChild(titleDescription);
     pLink.innerHTML = repos.html_url;
     aHref.appendChild(pLink);
-    section.appendChild(titleDescription);
-    section.appendChild(aHref);
+    divLink.appendChild(aHref);
+    section.appendChild(divLink);
 
     titleDescription = document.createElement('h3');
     titleDescription.innerHTML = "Tópicos";
     titleDescription.setAttribute("class", " ms-4 mt-5");
     section.appendChild(titleDescription);
 
+    const divCont = document.createElement("div");
     const divBtn = document.createElement("div");
-    divBtn.setAttribute("class", "div-btn d-flex flex-row");
+    
+    divCont.setAttribute("class", "container-btn row");
+    divBtn.setAttribute("class", "div-btn col-xs-2  col-md-4 col-lg-5");
     var topics = repos.topics;
     console.log("topics", topics);
     topics.map(async (currentValue, index) => {
 
         const btn = document.createElement('button');
         btn.setAttribute("class", "btn btn-dark mx-3 mt-2 ms-4 fs-5");
+        btn.setAttribute("style","cursor: default;");
         btn.innerHTML = currentValue;
         divBtn.appendChild(btn);
-        section.appendChild(divBtn);
+        divCont.appendChild(divBtn)
+        section.appendChild(divCont);
 
     });
     
