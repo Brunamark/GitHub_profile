@@ -11,17 +11,49 @@
     {
       "id": 3,
       "url": "https://www.pucminas.br/destaques/Paginas/default.aspx?utm_source=google&utm_medium=cpa&utm_campaign=aon-institucional&utm_content=PC00002&gad_source=1&gclid=Cj0KCQjwsuSzBhCLARIsAIcdLm5LdgdHHbDpFiSzjimnhD46W2KLKdp0CL3k5ph1FG5rMAx-yd3JbQ8aAtdNEALw_wcB"
+    },
+    {
+      "id": 4,
+      "url" : "https://www.agentesdev.com.br/blog/post/censura-na-internet-saiba-como-se-proteger-e-navegar-livremente"
+    },
+    {
+      "id": 5,
+      "url" : "https://www.agentesdev.com.br/blog/post/relembrando-o-caso-que-estabeleceu-codigo-como-expressao"
+    },
+    {
+      "id": 6,
+      "url": "https://www.bbc.co.uk/newsround/25622442"
+    },
+    {
+      "id": 7,
+      "url" : "https://www.instagram.com/p/C4szlhQsZ5b/?img_index=1"
+    },
+    {
+      "id":8,
+      "url": "https://www.agentesdev.com.br/blog/post/o-sistema-operacional-usado-por-edward-snowden"
     }
     
   ],
   "photos": [
     {
       "id": 1,
-      "url" : "https://github-readme-stats.vercel.app/api/top-langs/?username=Brunamark&layout=compact&langs_count=7&theme=dracula"
+      "url" : "https://dissenso.org/wp-content/uploads/2018/03/antiprojeto_fakenews.jpg"
     },
     {
-      "id" :2,
-      "url" :"https://github-readme-stats.vercel.app/api?username=Brunamark&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"
+      "id": 2,
+      "url": "https://www.agentesdev.com.br/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fw0r7mldf%2Fproduction%2F95bb09eb95fd9de96b5381cb27999d4852f51226-1200x600.png&w=3840&q=75"
+    },
+    {
+      "id": 3,
+      "url": "https://img.freepik.com/vetores-gratis/fundo-de-moeda-dourada-com-bitcoin-criptomoeda_1017-31505.jpg"
+    },
+    {
+      "id": 4,
+      "url": "https://yt3.googleusercontent.com/ytc/AIdro_l9jtAcERHIts0q6LsUtmAGPzQ8p8FzKGAoYRJ1N3Wz3Hs0=s900-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 5,
+      "url": "https://static.dw.com/image/50425971_605.jpg"
     }
   ]
  
