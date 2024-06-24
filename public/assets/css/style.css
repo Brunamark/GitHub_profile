@@ -42,7 +42,13 @@ main h4 {
     font-size: 2.5rem;
 }
 
-
+#navbarNavAltMarkup{
+    
+    a{
+        text-decoration: none;
+        color:#b0b7bc;
+    }
+}
 
 .info {
     min-width: 50%;
@@ -87,13 +93,22 @@ main h4 {
         border-radius: 100%;
     }
 }
+.star-div{
+    p{
+        margin: 0;
+    }
+}
 
 .picture-owner{
     img{
         border-radius: 100%;
     }
 }
-
+.link{
+    text-decoration: none;
+    cursor: pointer;
+    color:#b0b7bc;
+}
 #info-name {
     width: 100%;
 }
