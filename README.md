@@ -15,6 +15,6 @@ Technologies Used:
   <li>Install node.js <a href="https://nodejs.org/en/download/package-manager">here</a>.</li>
   <li>In terminal run npm start or npm run dev (see in package.JSON).</li>
   <li>In terminal you can see edpoints like : http://localhost:3000/links. </li>
-  <li>In your browser type http://localhost:3000/view/index.html. Verify if the endpoints terminal port is 3000</li>
+  <li>In your browser type http://localhost:3000/view/index.html. Verify if the endpoints terminal port is 3000.</li>
   <li>Enjoy 😀 </li>
 </ol>
